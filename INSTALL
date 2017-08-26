@@ -1,0 +1,9 @@
+Building Frozenmist
+
+See doc/readme-qt.rst for instructions on building Frozenmist-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Frozenmist.
+
+See doc/build-*.txt for instructions on building frozenmistd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Frozenmist.
