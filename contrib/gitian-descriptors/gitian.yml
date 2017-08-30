@@ -19,12 +19,11 @@ packages:
 - "pkg-config"
 - "libpng12-dev"
 reference_datetime: "2011-01-30 00:00:00"
-remotes:
-- "url": "https://github.com/frozenmist-project/frozenmist.git"
-  "dir": "frozenmist"
+remotes: []
 files:
 - "miniupnpc-1.9.20140401.tar.gz"
 - "qrencode-3.4.3.tar.bz2"
+- "frozenmist.zip"
 script: |
   INSTDIR="$HOME/install"
   export LIBRARY_PATH="$INSTDIR/lib"
@@ -44,9 +43,10 @@ script: |
   make $MAKEOPTS install
   cd ..
   #
+  unzip frozenmist.zip
+  cp -r frozenmist $OUTDIR/src
+  cp -r frozenmist nsis
   cd frozenmist
-  mkdir -p $OUTDIR/src
-  git archive HEAD | tar -x -C $OUTDIR/src
   cp $OUTDIR/src/doc/README.md $OUTDIR
   cp $OUTDIR/src/COPYING $OUTDIR
   cd src
